@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime as dt 
 
@@ -8,14 +8,7 @@ def welcome(request):
 
 def pictures_of_day(request):
     date = dt.date.today()
-    html = f'''
-        <html>
-            <body>
-                <h1> {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render (request, 'all-pictures/today-pictures.html', {"date": date,})
 
 def past_days_pictures(request,past_date):
 
@@ -26,17 +19,12 @@ def past_days_pictures(request,past_date):
     except ValueError:
         # Raise 404 error when ValueError is thrown
         raise Http404()
+        assert False
 
-        # Converts data from the string Url
-        date = dt.datetime.strptime(past_date,'%Y-%m-%d').date()
+    if date == dt.date.today():
+        return redirect(pictures_of_day)
 
-    day = convert_dates(date)
-    html = f'''
-        <html>
-            <body>
-                <h1>Pictures for {day} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-    return HttpResponse(html)
+    return render(request, 'all-pictures/past-pictures.html', {"date":date})    
+
+    
 
