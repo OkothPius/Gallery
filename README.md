@@ -78,11 +78,11 @@ def save_editor(self):
 
 In order to deploy the following files must be created assuming you have set heroku:
 
-Add a `procfile` in the project root.
-Add `requirement.txt` file with all the requirements in the project root;
-Add `Gunicorn` to `requirements.txt`;
-A `runtime.txt` to specify the correct Python version in the project root;
-Configure `whitenoise` to serve static files.
+* Add a `procfile` in the project root.
+* Add `requirement.txt` file with all the requirements in the project root;
+* Add `Gunicorn` to `requirements.txt`;
+* A `runtime.txt` to specify the correct Python version in the project root;
+* Configure `whitenoise` to serve static files.
 
 
 ## Built With
@@ -95,13 +95,12 @@ Configure `whitenoise` to serve static files.
 
 ## Authors
 
-* **Oruko Pius** - *The-Moringa-Tribune* - [MoringaTribune](https://github.com/OkothPius/The-Moringa-Tribune)
+* **Oruko Pius** 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [license.md](license.md) file for details
 
 ## Acknowledgments
 
