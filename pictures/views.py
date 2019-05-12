@@ -1,13 +1,16 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 import datetime as dt 
+from .models import Image
 
 # Create your views here.
 def welcome(request):
-    return render(request, 'welcome.html')
+    welcome = Welcome.objects.all()
+    return render(request, 'welcome.html', {"welcome":welcome})
 
 def pictures(request):
-    return render(request, 'pictures.html')
+    image = Image.objects.all()
+    return render(request, 'pictures.html', {"image":image})
     
 def search_results(request):
     if 'pictures' in request.GET and request.GET["pictures"]:
