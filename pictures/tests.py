@@ -40,24 +40,53 @@ class LocationTestClass(TestCase):
     '''
 
     def setUp(self):
-         self.pius= Editor(first_name = 'Pius', last_name = 'Clark', email = 'pitchclark@gnmail.com')
+         self.location = Location(name= 'Ngong')
 
-    #Testing save method
-    # def test_save_method(self):
-    #     self.pius.save_location()
-    #     location = Location.objects.all()
-    #     self.assertTrue(len(location) > 0)
+    def test_instance(self):
+        self.assertTrue(isinstance(self.location,Location))     
+
+    # Testing save method
+    def test_save_method(self):
+        self.location.save_location()
+        locations = Location.objects.all()
+        self.assertTrue(len(locations) > 0)
+
+    def test_delete_method(self):
+        self.location.save_location()
+        self.location.delete_location()    
+        locations = Location.objects.all()
+        self.assertTrue(len(locations)==0)
 
 class CategoryTestClass(TestCase):
     '''
     Testing the category class
     '''
     #Testing the save method
+    def setUp(self):
+         self.category = Category(name= 'Travel')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.category,Category))     
+
+    # Testing save method
+    def test_save_method(self):
+        self.category.save_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) > 0)
+
+    def test_delete_method(self):
+        self.category.save_category()
+        self.category.delete_category()    
+        category = Category.objects.all()
+        self.assertTrue(len(category)==0)
+
 
 class ImageTestClass(TestCase):
     '''
     Testing the Image class
     '''
+    def setUp(self):
+        self.image = Image()
     #Testing the save method
                 
 
