@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Editor,Image,Location,Category
+import datetime as dt 
 
 # Create your tests here.
 class EditorTestClass(TestCase):
