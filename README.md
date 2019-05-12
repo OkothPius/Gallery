@@ -1,10 +1,6 @@
 # Gallery
 
-My  personal gallery application that you display all my favourite photos for others to see.
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+My  personal gallery application that you display all my favourite photos for others to see. 12th-May-2019
 
 ### Prerequisites
 
@@ -104,6 +100,5 @@ This project is licensed under the MIT License - see the [license.md](license.md
 
 ## Acknowledgments
 
-* Used LMS for the sole refernce
+* Used LMS for the sole reference
 * StackOverflow
-* My friends who I consulted
