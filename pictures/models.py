@@ -65,7 +65,7 @@ class Image(models.Model):
     image_name = models.CharField(max_length =20)
     image_description = models.TextField(max_length =50)
     image_location = models.ForeignKey(Location, unique=False, blank=True)
-    image_category = models.ForeignKey(Category, null=True, blank=True)
+    image_category = models.ForeignKey(Category, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
 
     def save_image(self):
