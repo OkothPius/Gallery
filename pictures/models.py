@@ -61,7 +61,7 @@ class Image(models.Model):
     '''
     Shows the grid of images to be uploaded
     '''
-    image = models.ImageField(upload_to = 'image/')
+    image = models.ImageField(upload_to = 'images/', null=True)
     image_name = models.CharField(max_length =20)
     image_description = models.TextField(max_length =50)
     image_location = models.ForeignKey(Location, unique=False, blank=True)
