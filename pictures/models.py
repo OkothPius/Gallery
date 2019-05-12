@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Editor(models.Model):
@@ -31,6 +32,9 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    def delete_location(self):
+        self.delete()    
+
     def __str__(self):
         return self.name
 
@@ -47,6 +51,12 @@ class Category(models.Model):
             verbose_name = "category"
             verbose_name_plural = "categories"
 
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()            
+
 class Image(models.Model):
     '''
     Shows the grid of images to be uploaded
@@ -54,9 +64,17 @@ class Image(models.Model):
     image = models.ImageField(upload_to = 'image/')
     image_name = models.CharField(max_length =20)
     image_description = models.TextField(max_length =50)
-    image_location = models.ForeignKey('Location', null=True, unique=False, blank=True)
-    image_category = models.ForeignKey('Category', null=True, blank=True)
+    image_location = models.ForeignKey(Location, unique=False, blank=True)
+    image_category = models.ForeignKey(Category, null=True, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()    
+
+
     @classmethod
     def search_by_image_category(cls,search_term):
         pictures = cls.objects.filter(image_category__icontains=search_term)
