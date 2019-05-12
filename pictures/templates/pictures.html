@@ -1,21 +1,20 @@
 {%extends 'base.html'%}
 
 {% block content %}
-{{block.super}}
+<section class="no-touch">
 
-<div class="container">
-    <!--Looping through pictures-->
-    {% for pictures_item in pictures %}
-    <div class="row">
-        <!--displaying pictures Images image-->
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <img src="{{pictures_item.image.url}}" class="img-responsive" alt="Image">
-    </div>
-
-    {% empty %}
-    <div class="row">
-        <h2 class="text-center">No Images Here Yet</h2>
-    </div>
+<div class="wrap">
+    {% for image_item in images %}
+    <a href="{% url 'image' image_item.id %}">
+    <div class="box">
+        <div class="boxInner">
+      <img src="{{image_item.image.url}}" class="img-responsive" alt="Image">   
+        </div>
+    </div>    
+    </a>
+   
     {% endfor %}
 </div>
+</section>
+
 {% endblock %}
