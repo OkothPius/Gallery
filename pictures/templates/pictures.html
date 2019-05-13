@@ -2,17 +2,18 @@
 <section class="no-touch">
 
 <div class="wrap">
-    {% for image_item in images %}
+    {% for image_item in image %}
     <a href="{% url 'image' image_item.id %}">
     <div class="box">
         <div class="boxInner">
-      <img src="{{image_item.image.url}}" class="img-responsive" alt="Image">   
+      <img src="{{image_item.image.url}}" class="img-responsive" alt="Image"> 
+      <div class="titleBox" style="font-family:'Cabin Sketch', cursive">{{image_item.image_name |upper}}</div>  
         </div>
     </div>    
     </a>
-   
     {% endfor %}
 </div>
+
 </section>
 
 {% endblock %}

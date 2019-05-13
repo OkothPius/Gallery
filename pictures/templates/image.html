@@ -1,56 +1,34 @@
 {%extends 'base.html'%}{% block content %}
 
  <div class="product">
-   <div class="left-img2"><img src="{{image.image.url}}"  class="img-responsive" alt=""></div>
+   <div class="left-img2"><img src="{{image.image.url}}"  class="img-responsive" alt="" /></div>
    <div class="right-content">
      <div class="content-arrow"></div>
      <div class="content-container">
-       <p>{{image.image_name|upper}}</p>
+       <h2 style="font-family: 'Cabin Sketch', cursive;">{{image.image_name|upper}}</h2>
        <div class="bot-view">
-         <div class="date">{{image.time_uploaded}} /&nbsp<span class="under">{{image.image_location}}</span>
+         <div class="date" style="color:white; font-family: 'Concert One', cursive;">{{image.time_uploaded}} /&nbsp<span class="under" style="color:teal">{{image.image_location}}</span>
         </div>
         <hr class="line" />
+        <div class="info" style="font-family: 'Arima Madurai', cursive; color:white"></div>
         <div>
-          <span>{{image.image_description}}</span>
+          <span style="color:turquoise">{{image.image_description}}</span>
         </div>
         <hr class="line" />
         <div class="footer">
           <div class="buttons">
             <a href="#" class="btn btn-default btn-block">Copy Image link &nbsp <i class="glyphicon glyphicon-paperclip"></i></a>
           </div>
-          <p>{{image.image_category}}</p>
+          <p style="color:rgb(138, 138, 138)4, 133, 133)">{{image.image_category}}</p>
         </div>
        </div>
      </div>
    </div>
  </div>
 
+
  {% endblock %}
 
 
 
- <!-- {%extends 'base.html'%}
-
- {% block content %}
-
- <div class="container">
-
-   <div class="row">
-     <img src="{{image.image.url}}"  class="img-responsive" alt="">
-   </div>
-
-   <div class="row">
-     <h1 class="text-center">{{image.image_category}}</h1>
-   </div>
-
-   <div class="row">
-     <p>{{image.post}}</p>
-   </div>
-
-   <div class="row">
-     <p>Posted {{image.pub_date|timesince}} by {{image.editor.first_name}}</p>
-   </div>
-
- </div>
-
- {% endblock %} -->
+ 
